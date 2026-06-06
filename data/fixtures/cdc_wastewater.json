@@ -2,6 +2,7 @@
   {
     "date_end": "2026-03-14",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "1.65",
     "wva_level_category": "Low"
@@ -9,6 +10,7 @@
   {
     "date_end": "2026-03-21",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "1.85",
     "wva_level_category": "Low"
@@ -16,6 +18,7 @@
   {
     "date_end": "2026-03-28",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "2.13",
     "wva_level_category": "Low"
@@ -23,6 +26,7 @@
   {
     "date_end": "2026-04-04",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "2.30",
     "wva_level_category": "Low"
@@ -30,6 +34,7 @@
   {
     "date_end": "2026-04-11",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "2.56",
     "wva_level_category": "Low"
@@ -37,6 +42,7 @@
   {
     "date_end": "2026-04-18",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "2.61",
     "wva_level_category": "Low"
@@ -44,6 +50,7 @@
   {
     "date_end": "2026-04-25",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "2.88",
     "wva_level_category": "Low"
@@ -51,6 +58,7 @@
   {
     "date_end": "2026-05-02",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "3.12",
     "wva_level_category": "Moderate"
@@ -58,6 +66,7 @@
   {
     "date_end": "2026-05-09",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "3.27",
     "wva_level_category": "Moderate"
@@ -65,6 +74,7 @@
   {
     "date_end": "2026-05-16",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "3.55",
     "wva_level_category": "Moderate"
@@ -72,6 +82,7 @@
   {
     "date_end": "2026-05-23",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "3.72",
     "wva_level_category": "Moderate"
@@ -79,6 +90,7 @@
   {
     "date_end": "2026-05-30",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "sars-cov-2",
     "wva_level": "4.01",
     "wva_level_category": "Moderate"
@@ -86,6 +98,7 @@
   {
     "date_end": "2026-03-14",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "3.16",
     "wva_level_category": "Moderate"
@@ -93,6 +106,7 @@
   {
     "date_end": "2026-03-21",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "2.86",
     "wva_level_category": "Low"
@@ -100,6 +114,7 @@
   {
     "date_end": "2026-03-28",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "2.69",
     "wva_level_category": "Low"
@@ -107,6 +122,7 @@
   {
     "date_end": "2026-04-04",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "2.45",
     "wva_level_category": "Low"
@@ -114,6 +130,7 @@
   {
     "date_end": "2026-04-11",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "2.30",
     "wva_level_category": "Low"
@@ -121,6 +138,7 @@
   {
     "date_end": "2026-04-18",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "2.32",
     "wva_level_category": "Low"
@@ -128,6 +146,7 @@
   {
     "date_end": "2026-04-25",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "2.05",
     "wva_level_category": "Low"
@@ -135,6 +154,7 @@
   {
     "date_end": "2026-05-02",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "1.86",
     "wva_level_category": "Low"
@@ -142,6 +162,7 @@
   {
     "date_end": "2026-05-09",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "1.57",
     "wva_level_category": "Low"
@@ -149,6 +170,7 @@
   {
     "date_end": "2026-05-16",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "1.51",
     "wva_level_category": "Low"
@@ -156,6 +178,7 @@
   {
     "date_end": "2026-05-23",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "1.22",
     "wva_level_category": "Minimal"
@@ -163,6 +186,7 @@
   {
     "date_end": "2026-05-30",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "influenza a",
     "wva_level": "1.08",
     "wva_level_category": "Minimal"
@@ -170,6 +194,7 @@
   {
     "date_end": "2026-03-14",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "1.65",
     "wva_level_category": "Low"
@@ -177,6 +202,7 @@
   {
     "date_end": "2026-03-21",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "1.47",
     "wva_level_category": "Minimal"
@@ -184,6 +210,7 @@
   {
     "date_end": "2026-03-28",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "1.37",
     "wva_level_category": "Minimal"
@@ -191,6 +218,7 @@
   {
     "date_end": "2026-04-04",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "1.33",
     "wva_level_category": "Minimal"
@@ -198,6 +226,7 @@
   {
     "date_end": "2026-04-11",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "1.29",
     "wva_level_category": "Minimal"
@@ -205,6 +234,7 @@
   {
     "date_end": "2026-04-18",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "1.20",
     "wva_level_category": "Minimal"
@@ -212,6 +242,7 @@
   {
     "date_end": "2026-04-25",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "1.01",
     "wva_level_category": "Minimal"
@@ -219,6 +250,7 @@
   {
     "date_end": "2026-05-02",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "0.90",
     "wva_level_category": "Minimal"
@@ -226,6 +258,7 @@
   {
     "date_end": "2026-05-09",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "0.88",
     "wva_level_category": "Minimal"
@@ -233,6 +266,7 @@
   {
     "date_end": "2026-05-16",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "0.81",
     "wva_level_category": "Minimal"
@@ -240,6 +274,7 @@
   {
     "date_end": "2026-05-23",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "0.73",
     "wva_level_category": "Minimal"
@@ -247,6 +282,7 @@
   {
     "date_end": "2026-05-30",
     "wwtp_jurisdiction": "MN",
+    "county_names": "Hennepin County",
     "pcr_target": "rsv",
     "wva_level": "0.76",
     "wva_level_category": "Minimal"

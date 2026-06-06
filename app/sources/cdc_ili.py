@@ -88,7 +88,7 @@ def get_series() -> list[Series]:
                 data_through=points[-1].date if points else None,
                 fetched_at=now_iso(),
                 is_sample=not LIVE,
-                notes="Accessed via the Delphi Epidata API, which mirrors CDC FluView.",
+                notes="Via the Delphi Epidata API (mirrors CDC FluView). Published at state level only.",
             ),
             current_value=current.value if current else None,
             current_date=current.date if current else None,

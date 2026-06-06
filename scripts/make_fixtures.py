@@ -81,6 +81,7 @@ for target, (start, end, jit) in ww_curves.items():
         ww_rows.append({
             "date_end": sat.isoformat(),
             "wwtp_jurisdiction": "MN",
+            "county_names": "Hennepin County",  # so the county filter has a match
             "pcr_target": target,
             "wva_level": f"{level:.2f}",
             "wva_level_category": wval_category(level),

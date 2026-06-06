@@ -1,15 +1,30 @@
 """Central configuration for the local illness dashboard.
 
-Anything you might want to change — your location, the SAMPLE/LIVE switch, the
-exact field names CDC uses — lives here, so you only ever edit one file.
+Anything you might want to change — your area, the SAMPLE/LIVE switch, the exact
+field names CDC uses — lives here, so you only ever edit one file.
 """
 import os
 from pathlib import Path
 
-# --- What this dashboard is "about" ------------------------------------------
+# --- What area this dashboard covers -----------------------------------------
 LOCATION_LABEL = "Eden Prairie / Hennepin County, Minnesota"
-STATE_NAME = "Minnesota"   # how CDC NSSP labels the state (its `geography` value)
-STATE_ABBR = "MN"          # how CDC wastewater labels the state (a 2-letter code)
+
+# CDC's feeds come at different geographic resolutions, so we configure each.
+# These defaults are safe and known to work; localize the LIVE data by following
+# the README section "Localizing to your area" once you know the exact labels.
+STATE_NAME = "Minnesota"   # CDC NSSP statewide `geography` value
+STATE_ABBR = "MN"          # CDC wastewater 2-letter jurisdiction code
+
+# CDC NSSP emergency-department visits can be narrowed to a sub-state Health
+# Service Area (HSA). None = whole state. To localize, set this to your area's
+# EXACT HSA string (discover it live — see the README); for us that's the Twin
+# Cities / Minneapolis HSA that contains Hennepin County.
+NSSP_HSA = None
+
+# CDC wastewater can be narrowed to sites serving a county (matched within the
+# `county_names` field). None = statewide. "Hennepin" targets your county; if the
+# live data has no county detail, the app falls back to statewide automatically.
+WASTEWATER_COUNTY = "Hennepin"
 
 # --- LIVE vs SAMPLE data -----------------------------------------------------
 # By default we serve bundled SAMPLE data, so the app runs anywhere with no

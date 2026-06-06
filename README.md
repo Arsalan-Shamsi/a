@@ -87,6 +87,28 @@ To regenerate the sample fixtures after changing the model:
 .venv/bin/python scripts/make_fixtures.py
 ```
 
+## Localizing to your area
+
+The dashboard configures geography per source in `app/config.py`, and **every
+number on the page shows the geography it actually covers**, so mixed
+resolutions are always labelled honestly. Out of the box:
+
+- **Wastewater → Hennepin County** (`WASTEWATER_COUNTY = "Hennepin"`). If the live
+  data has no county detail, it falls back to statewide and says so.
+- **ER visits & flu → Minnesota statewide.** Flu/ILINet is only published at
+  state level. ER visits *can* be narrowed to a sub-state Health Service Area
+  (HSA) — but CDC's exact HSA name has to be read from the live API:
+
+```bash
+# 1. List CDC NSSP's sub-state areas and find the Twin Cities / Minneapolis one:
+curl "https://data.cdc.gov/resource/rdmq-nq56.json?\$select=distinct%20geography&\$limit=2000"
+#    Then in app/config.py set:  NSSP_HSA = "<that exact string>"
+
+# 2. (Optional) Confirm CDC wastewater carries Hennepin County sites:
+curl "https://data.cdc.gov/resource/atcp-73re.json?\$limit=2"                 # is there a county field?
+curl "https://data.cdc.gov/resource/2ew6-ywp6.json?\$select=distinct%20county_names&wwtp_jurisdiction=MN"
+```
+
 ## Project layout
 
 ```

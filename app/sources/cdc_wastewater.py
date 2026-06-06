@@ -9,10 +9,13 @@ Resource id: atcp-73re  (data.cdc.gov)
 
 The number (WVAL) is a normalized "activity level"; CDC sorts it into official
 buckets Minimal -> Low -> Moderate -> High -> Very High (see app/trends.py).
+
+Geography: filtered to WASTEWATER_COUNTY (config) when the data carries county
+detail; otherwise it falls back to statewide and says so.
 """
 from typing import Optional
 
-from ..config import HISTORY_WEEKS, LIVE, STATE_ABBR
+from ..config import HISTORY_WEEKS, LIVE, STATE_ABBR, WASTEWATER_COUNTY
 from ..models import MetricPoint, Provenance, Series
 from ..trends import compute_trend, wval_category
 from .base import first_present, load_fixture, http_get_json, now_iso, to_float
@@ -36,6 +39,7 @@ F_STATE = ["wwtp_jurisdiction", "reporting_jurisdiction", "state", "geography"]
 F_PATHOGEN = ["pcr_target", "pathogen"]
 F_VALUE = ["wva_level", "activity_level", "wva_level_value", "percentile"]
 F_CATEGORY = ["wva_level_category", "activity_level_category", "category"]
+F_COUNTY = ["county_names", "county", "counties", "wwtp_county"]
 
 
 def _normalize_pathogen(raw: Optional[str]) -> Optional[str]:
@@ -51,9 +55,15 @@ def _normalize_pathogen(raw: Optional[str]) -> Optional[str]:
     return None
 
 
+def _county_match(row: dict, county: str) -> bool:
+    value = first_present(row, F_COUNTY)
+    return bool(value) and county.lower() in str(value).lower()
+
+
 def _fetch_raw() -> list[dict]:
     if LIVE:
-        # The state field name is uncertain; wwtp_jurisdiction is the most likely.
+        # Fetch all rows for the state; we filter to the county in code so a
+        # missing/oddly-named county column degrades gracefully instead of erroring.
         params = {
             "$where": f"{F_STATE[0]}='{STATE_ABBR}'",
             "$order": f"{F_DATE[0]} DESC",
@@ -66,8 +76,25 @@ def _fetch_raw() -> list[dict]:
 def get_series() -> list[Series]:
     rows = _fetch_raw()
 
+    # Narrow to the configured county if that detail is present; otherwise keep
+    # everything and report it as statewide.
+    county_rows = [r for r in rows if _county_match(r, WASTEWATER_COUNTY)] if WASTEWATER_COUNTY else []
+    use_county = bool(county_rows)
+    working_rows = county_rows if use_county else rows
+
+    if use_county:
+        geography = f"{WASTEWATER_COUNTY} County, {STATE_ABBR}"
+        geography_level = "county"
+        notes = "Virus measured in sewage; independent of testing or doctor visits."
+    else:
+        geography = f"Minnesota ({STATE_ABBR}, statewide)"
+        geography_level = "state"
+        notes = "Virus measured in sewage; independent of testing or doctor visits."
+        if WASTEWATER_COUNTY:
+            notes += f" County-level data was not available, so this shows statewide."
+
     by_virus: dict[str, list[dict]] = {}
-    for row in rows:
+    for row in working_rows:
         virus = _normalize_pathogen(first_present(row, F_PATHOGEN))
         if virus is not None:
             by_virus.setdefault(virus, []).append(row)
@@ -86,9 +113,7 @@ def get_series() -> list[Series]:
         values = [p.value for p in points]
         trend, trend_label = compute_trend(values)
         current = next((p for p in reversed(points) if p.value is not None), None)
-        current_category = next(
-            (c for c in reversed(categories) if c), None
-        )
+        current_category = next((c for c in reversed(categories) if c), None)
 
         out.append(
             Series(
@@ -104,13 +129,13 @@ def get_series() -> list[Series]:
                         "Viral Activity Level"
                     ),
                     source_url=LANDING_URL,
-                    geography=f"Minnesota ({STATE_ABBR}, statewide)",
-                    geography_level="state",
+                    geography=geography,
+                    geography_level=geography_level,
                     api_url=API_URL if LIVE else None,
                     data_through=points[-1].date if points else None,
                     fetched_at=now_iso(),
                     is_sample=not LIVE,
-                    notes="Virus measured in sewage; independent of testing or doctor visits.",
+                    notes=notes,
                 ),
                 current_value=current.value if current else None,
                 current_date=current.date if current else None,
