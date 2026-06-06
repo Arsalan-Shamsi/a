@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Local config and cached API responses
+.env
+data/cache/*
+!data/cache/.gitkeep
+
+# OS cruft
+.DS_Store

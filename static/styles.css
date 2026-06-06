@@ -1,0 +1,145 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --ink: #1c2733;
+  --muted: #5b6b7b;
+  --line: #e3e9f0;
+  --accent: #2c6fb5;
+
+  /* Official activity-level colours (low -> high). */
+  --minimal: #2f9e6f;
+  --low: #7cc06a;
+  --moderate: #e0a92e;
+  --high: #e07b39;
+  --veryhigh: #d6453d;
+
+  /* Trend colours: rising illness reads "worse". */
+  --rising: #d6453d;
+  --falling: #2f9e6f;
+  --stable: #7a8896;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.site-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+.site-header h1 { margin: 0; font-size: 1.9rem; }
+.tagline { margin: .25rem 0 0; color: var(--muted); }
+.meta { margin: .5rem 0 0; color: var(--muted); font-size: .9rem; }
+
+main { max-width: 1000px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+.status { text-align: center; color: var(--muted); padding: 2rem 0; }
+.hidden { display: none; }
+
+.banner {
+  background: #fff7e6;
+  border: 1px solid #f0d699;
+  color: #7a5b12;
+  border-radius: 10px;
+  padding: .75rem 1rem;
+  margin: 0 0 1.25rem;
+  font-size: .92rem;
+}
+
+/* --- virus cards --- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.1rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(20, 40, 70, .05);
+}
+.card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: .6rem;
+  margin-bottom: .6rem;
+}
+.card-head h2 { margin: 0; font-size: 1.25rem; }
+.chip {
+  font-size: .8rem;
+  font-weight: 600;
+  padding: .15rem .6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* --- a single signal within a card --- */
+.signal { padding: .55rem 0; border-top: 1px solid var(--line); }
+.signal:first-of-type { border-top: none; }
+.signal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .5rem;
+}
+.signal-label { font-size: .9rem; color: var(--muted); }
+.signal-source a { color: var(--accent); text-decoration: none; font-size: .78rem; }
+.signal-source a:hover { text-decoration: underline; }
+.signal-main {
+  display: flex;
+  align-items: baseline;
+  gap: .55rem;
+  margin: .15rem 0 .1rem;
+}
+.value { font-size: 1.7rem; font-weight: 700; }
+.unit { color: var(--muted); font-size: .9rem; }
+.trend { font-weight: 600; font-size: .9rem; margin-left: auto; }
+.trend.rising { color: var(--rising); }
+.trend.falling { color: var(--falling); }
+.trend.stable { color: var(--stable); }
+
+.level-pill { color: #fff; }
+.level-minimal { background: var(--minimal); }
+.level-low { background: var(--low); }
+.level-moderate { background: var(--moderate); }
+.level-high { background: var(--high); }
+.level-veryhigh { background: var(--veryhigh); }
+.chip.muted { background: #eef2f7; color: var(--muted); }
+
+.spark { display: block; margin: .25rem 0 .15rem; }
+.through { color: var(--muted); font-size: .75rem; }
+.tag-sample { color: #b07d12; font-weight: 600; }
+.tag-live { color: var(--minimal); font-weight: 600; }
+
+/* --- sources & disclaimers --- */
+.sources { margin-top: 2rem; }
+.sources h2, .disclaimers h2 { font-size: 1.15rem; }
+.source-item {
+  padding: .55rem 0;
+  border-top: 1px solid var(--line);
+  font-size: .9rem;
+}
+.source-item a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.source-item a:hover { text-decoration: underline; }
+.source-meta { color: var(--muted); font-size: .82rem; }
+.role-reference { opacity: .92; }
+
+.disclaimers { margin-top: 1.5rem; font-size: .88rem; color: var(--muted); }
+.disclaimers ul { padding-left: 1.1rem; }
+
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: .82rem;
+  padding: 1.5rem 1rem 2.5rem;
+}

@@ -1,0 +1,150 @@
+{
+  "result": 1,
+  "epidata": [
+    {
+      "region": "mn",
+      "epiweek": 202610,
+      "num_ili": 695,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 3.16,
+      "ili": 3.03,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202611,
+      "num_ili": 605,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 2.75,
+      "ili": 2.64,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202612,
+      "num_ili": 591,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 2.69,
+      "ili": 2.58,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202613,
+      "num_ili": 532,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 2.42,
+      "ili": 2.32,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202614,
+      "num_ili": 528,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 2.4,
+      "ili": 2.3,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202615,
+      "num_ili": 457,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 2.08,
+      "ili": 2.0,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202616,
+      "num_ili": 407,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 1.85,
+      "ili": 1.78,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202617,
+      "num_ili": 367,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 1.67,
+      "ili": 1.6,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202618,
+      "num_ili": 343,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 1.56,
+      "ili": 1.5,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202619,
+      "num_ili": 290,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 1.32,
+      "ili": 1.27,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202620,
+      "num_ili": 264,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 1.2,
+      "ili": 1.15,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    },
+    {
+      "region": "mn",
+      "epiweek": 202621,
+      "num_ili": 233,
+      "num_patients": 22000,
+      "num_providers": 40,
+      "wili": 1.06,
+      "ili": 1.02,
+      "release_date": "2026-06-06",
+      "issue": 202621,
+      "lag": 0
+    }
+  ],
+  "message": "success"
+}

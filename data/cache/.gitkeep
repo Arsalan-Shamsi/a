@@ -1,0 +1,2 @@
+# Keeps the cache directory in the repo. Cached LIVE responses land here and are
+# git-ignored.

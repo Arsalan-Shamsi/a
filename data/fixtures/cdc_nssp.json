@@ -1,0 +1,218 @@
+[
+  {
+    "week_end": "2026-03-14",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.39"
+  },
+  {
+    "week_end": "2026-03-21",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.41"
+  },
+  {
+    "week_end": "2026-03-28",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.46"
+  },
+  {
+    "week_end": "2026-04-04",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.51"
+  },
+  {
+    "week_end": "2026-04-11",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.58"
+  },
+  {
+    "week_end": "2026-04-18",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.63"
+  },
+  {
+    "week_end": "2026-04-25",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.69"
+  },
+  {
+    "week_end": "2026-05-02",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.68"
+  },
+  {
+    "week_end": "2026-05-09",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.75"
+  },
+  {
+    "week_end": "2026-05-16",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.77"
+  },
+  {
+    "week_end": "2026-05-23",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.83"
+  },
+  {
+    "week_end": "2026-05-30",
+    "geography": "Minnesota",
+    "pathogen": "COVID-19",
+    "percent_visits": "0.90"
+  },
+  {
+    "week_end": "2026-03-14",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "2.40"
+  },
+  {
+    "week_end": "2026-03-21",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "2.28"
+  },
+  {
+    "week_end": "2026-03-28",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "2.24"
+  },
+  {
+    "week_end": "2026-04-04",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "2.00"
+  },
+  {
+    "week_end": "2026-04-11",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "1.70"
+  },
+  {
+    "week_end": "2026-04-18",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "1.60"
+  },
+  {
+    "week_end": "2026-04-25",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "1.43"
+  },
+  {
+    "week_end": "2026-05-02",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "1.07"
+  },
+  {
+    "week_end": "2026-05-09",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "1.00"
+  },
+  {
+    "week_end": "2026-05-16",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "0.77"
+  },
+  {
+    "week_end": "2026-05-23",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "0.53"
+  },
+  {
+    "week_end": "2026-05-30",
+    "geography": "Minnesota",
+    "pathogen": "Influenza",
+    "percent_visits": "0.32"
+  },
+  {
+    "week_end": "2026-03-14",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.76"
+  },
+  {
+    "week_end": "2026-03-21",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.63"
+  },
+  {
+    "week_end": "2026-03-28",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.55"
+  },
+  {
+    "week_end": "2026-04-04",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.50"
+  },
+  {
+    "week_end": "2026-04-11",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.52"
+  },
+  {
+    "week_end": "2026-04-18",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.45"
+  },
+  {
+    "week_end": "2026-04-25",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.41"
+  },
+  {
+    "week_end": "2026-05-02",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.35"
+  },
+  {
+    "week_end": "2026-05-09",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.28"
+  },
+  {
+    "week_end": "2026-05-16",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.25"
+  },
+  {
+    "week_end": "2026-05-23",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.17"
+  },
+  {
+    "week_end": "2026-05-30",
+    "geography": "Minnesota",
+    "pathogen": "RSV",
+    "percent_visits": "0.12"
+  }
+]

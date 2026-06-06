@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What's Going Around — Local Illness Dashboard</title>
+  <meta name="description" content="Current flu, COVID-19, and RSV levels for the local area, from public health data." />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>What's Going Around</h1>
+    <p class="tagline">Current flu, COVID-19 &amp; RSV levels — your local "health weather."</p>
+    <p id="meta" class="meta"></p>
+  </header>
+
+  <main id="app">
+    <p id="status" class="status">Loading the latest public health data…</p>
+    <div id="sample-banner" class="banner hidden"></div>
+    <section id="cards" class="cards"></section>
+    <section id="sources" class="sources"></section>
+    <section id="disclaimers" class="disclaimers"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built from public health surveillance data. No accounts, no tracking, no personal data collected.</p>
+  </footer>
+
+  <noscript>
+    <p class="status">This dashboard needs JavaScript to display the charts. The data is also available as JSON at <code>/api/dashboard</code>.</p>
+  </noscript>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
