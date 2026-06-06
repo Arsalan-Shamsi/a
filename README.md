@@ -100,8 +100,9 @@ resolutions are always labelled honestly. Out of the box:
   (HSA) — but CDC's exact HSA name has to be read from the live API:
 
 ```bash
-# 1. List CDC NSSP's sub-state areas and find the Twin Cities / Minneapolis one:
-curl "https://data.cdc.gov/resource/rdmq-nq56.json?\$select=distinct%20geography&\$limit=2000"
+# 1. List CDC NSSP's sub-state areas and find the Twin Cities / Minneapolis one
+#    (this is the same dataset the app filters, so the string is guaranteed to match):
+curl "https://data.cdc.gov/resource/vutn-jzwm.json?\$select=distinct%20geography&\$limit=3000"
 #    Then in app/config.py set:  NSSP_HSA = "<that exact string>"
 
 # 2. (Optional) Confirm CDC wastewater carries Hennepin County sites:
