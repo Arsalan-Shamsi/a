@@ -10,12 +10,12 @@ Resource id: atcp-73re  (data.cdc.gov)
 The number (WVAL) is a normalized "activity level"; CDC sorts it into official
 buckets Minimal -> Low -> Moderate -> High -> Very High (see app/trends.py).
 
-Geography: filtered to WASTEWATER_COUNTY (config) when the data carries county
+Geography: filtered to LOCAL_COUNTY (config) when the data carries county
 detail; otherwise it falls back to statewide and says so.
 """
 from typing import Optional
 
-from ..config import HISTORY_WEEKS, LIVE, STATE_ABBR, WASTEWATER_COUNTY
+from ..config import HISTORY_WEEKS, LIVE, STATE_ABBR, LOCAL_COUNTY
 from ..models import MetricPoint, Provenance, Series
 from ..trends import compute_trend, wval_category
 from .base import first_present, load_fixture, http_get_json, now_iso, to_float
@@ -78,19 +78,19 @@ def get_series() -> list[Series]:
 
     # Narrow to the configured county if that detail is present; otherwise keep
     # everything and report it as statewide.
-    county_rows = [r for r in rows if _county_match(r, WASTEWATER_COUNTY)] if WASTEWATER_COUNTY else []
+    county_rows = [r for r in rows if _county_match(r, LOCAL_COUNTY)] if LOCAL_COUNTY else []
     use_county = bool(county_rows)
     working_rows = county_rows if use_county else rows
 
     if use_county:
-        geography = f"{WASTEWATER_COUNTY} County, {STATE_ABBR}"
+        geography = f"{LOCAL_COUNTY} County, {STATE_ABBR}"
         geography_level = "county"
         notes = "Virus measured in sewage; independent of testing or doctor visits."
     else:
         geography = f"Minnesota ({STATE_ABBR}, statewide)"
         geography_level = "state"
         notes = "Virus measured in sewage; independent of testing or doctor visits."
-        if WASTEWATER_COUNTY:
+        if LOCAL_COUNTY:
             notes += f" County-level data was not available, so this shows statewide."
 
     by_virus: dict[str, list[dict]] = {}

@@ -89,25 +89,28 @@ To regenerate the sample fixtures after changing the model:
 
 ## Localizing to your area
 
-The dashboard configures geography per source in `app/config.py`, and **every
-number on the page shows the geography it actually covers**, so mixed
-resolutions are always labelled honestly. Out of the box:
+Geography is set per source in `app/config.py`, and **every number on the page
+shows the geography it actually covers**, so the three layers are labelled
+honestly. With `LOCAL_COUNTY = "Hennepin"`, out of the box you get:
 
-- **Wastewater → Hennepin County** (`WASTEWATER_COUNTY = "Hennepin"`). If the live
-  data has no county detail, it falls back to statewide and says so.
-- **ER visits & flu → Minnesota statewide.** Flu/ILINet is only published at
-  state level. ER visits *can* be narrowed to a sub-state Health Service Area
-  (HSA) — but CDC's exact HSA name has to be read from the live API:
+- **Statewide level** — `% of ER visits` for Minnesota (CDC NSSP `vutn-jzwm`).
+  CDC publishes this *number* at state level only.
+- **Local direction** — CDC's official rising/falling for the Health Service
+  Area that contains your county (CDC NSSP `rdmq-nq56`). The HSA name is read
+  straight from the data. In the respiratory off-season it may read
+  "Not reported locally" — that's CDC's data, not a bug.
+- **Local wastewater** — Hennepin County sites (CDC NWSS), with an automatic,
+  clearly-noted fall-back to statewide if the live data has no county detail.
+
+To cover a different area, change `LOCAL_COUNTY` (and `STATE_NAME` / `STATE_ABBR`).
+You can see exactly what the live API returns for your county with:
 
 ```bash
-# 1. List CDC NSSP's sub-state areas and find the Twin Cities / Minneapolis one
-#    (this is the same dataset the app filters, so the string is guaranteed to match):
-curl "https://data.cdc.gov/resource/vutn-jzwm.json?\$select=distinct%20geography&\$limit=3000"
-#    Then in app/config.py set:  NSSP_HSA = "<that exact string>"
+# CDC's local trend rows for your county (shows the HSA name + the trend words):
+curl "https://data.cdc.gov/resource/rdmq-nq56.json?\$where=county='Hennepin'&\$order=week_end%20DESC&\$limit=3"
 
-# 2. (Optional) Confirm CDC wastewater carries Hennepin County sites:
-curl "https://data.cdc.gov/resource/atcp-73re.json?\$limit=2"                 # is there a county field?
-curl "https://data.cdc.gov/resource/2ew6-ywp6.json?\$select=distinct%20county_names&wwtp_jurisdiction=MN"
+# Confirm CDC wastewater carries county detail for Minnesota:
+curl "https://data.cdc.gov/resource/atcp-73re.json?\$limit=2"
 ```
 
 ## Project layout

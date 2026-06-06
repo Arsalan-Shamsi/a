@@ -1,0 +1,58 @@
+[
+  {
+    "week_end": "2026-05-09T00:00:00.000",
+    "geography": "Minnesota",
+    "county": "Hennepin",
+    "ed_trends_covid": "Increasing",
+    "ed_trends_influenza": "Decreasing",
+    "ed_trends_rsv": "Decreasing",
+    "hsa": "Hennepin (Minneapolis), MN",
+    "hsa_counties": "Anoka, Carver, Hennepin, Scott",
+    "hsa_nci_id": "999",
+    "fips": "27053",
+    "trend_source": "HSA",
+    "buildnumber": "2026-06-06"
+  },
+  {
+    "week_end": "2026-05-16T00:00:00.000",
+    "geography": "Minnesota",
+    "county": "Hennepin",
+    "ed_trends_covid": "Increasing",
+    "ed_trends_influenza": "Decreasing",
+    "ed_trends_rsv": "Decreasing",
+    "hsa": "Hennepin (Minneapolis), MN",
+    "hsa_counties": "Anoka, Carver, Hennepin, Scott",
+    "hsa_nci_id": "999",
+    "fips": "27053",
+    "trend_source": "HSA",
+    "buildnumber": "2026-06-06"
+  },
+  {
+    "week_end": "2026-05-23T00:00:00.000",
+    "geography": "Minnesota",
+    "county": "Hennepin",
+    "ed_trends_covid": "Increasing",
+    "ed_trends_influenza": "Decreasing",
+    "ed_trends_rsv": "Decreasing",
+    "hsa": "Hennepin (Minneapolis), MN",
+    "hsa_counties": "Anoka, Carver, Hennepin, Scott",
+    "hsa_nci_id": "999",
+    "fips": "27053",
+    "trend_source": "HSA",
+    "buildnumber": "2026-06-06"
+  },
+  {
+    "week_end": "2026-05-30T00:00:00.000",
+    "geography": "Minnesota",
+    "county": "Hennepin",
+    "ed_trends_covid": "Increasing",
+    "ed_trends_influenza": "Decreasing",
+    "ed_trends_rsv": "Decreasing",
+    "hsa": "Hennepin (Minneapolis), MN",
+    "hsa_counties": "Anoka, Carver, Hennepin, Scott",
+    "hsa_nci_id": "999",
+    "fips": "27053",
+    "trend_source": "HSA",
+    "buildnumber": "2026-06-06"
+  }
+]

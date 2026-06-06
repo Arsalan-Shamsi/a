@@ -5,7 +5,7 @@ by virus and builds the de-duplicated 'Sources & methods' list.
 """
 from .config import LIVE, LOCATION_LABEL
 from .models import Dashboard, VirusBlock
-from .sources import cdc_ili, cdc_nssp, cdc_wastewater, mdh
+from .sources import cdc_ed_trends, cdc_ili, cdc_nssp, cdc_wastewater, mdh
 from .sources.base import now_iso
 
 VIRUS_ORDER = ["COVID-19", "Influenza", "RSV"]
@@ -20,7 +20,7 @@ DISCLAIMERS = [
 
 def build_dashboard() -> Dashboard:
     all_series = []
-    for module in (cdc_nssp, cdc_wastewater, cdc_ili):
+    for module in (cdc_nssp, cdc_ed_trends, cdc_wastewater, cdc_ili):
         all_series.extend(module.get_series())
 
     blocks = [

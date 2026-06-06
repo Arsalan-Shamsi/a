@@ -12,19 +12,15 @@ LOCATION_LABEL = "Eden Prairie / Hennepin County, Minnesota"
 # CDC's feeds come at different geographic resolutions, so we configure each.
 # These defaults are safe and known to work; localize the LIVE data by following
 # the README section "Localizing to your area" once you know the exact labels.
-STATE_NAME = "Minnesota"   # CDC NSSP statewide `geography` value
+STATE_NAME = "Minnesota"   # CDC NSSP statewide `geography` (the % number is state-level only)
 STATE_ABBR = "MN"          # CDC wastewater 2-letter jurisdiction code
 
-# CDC NSSP emergency-department visits can be narrowed to a sub-state Health
-# Service Area (HSA). None = whole state. To localize, set this to your area's
-# EXACT HSA string (discover it live — see the README); for us that's the Twin
-# Cities / Minneapolis HSA that contains Hennepin County.
-NSSP_HSA = None
-
-# CDC wastewater can be narrowed to sites serving a county (matched within the
-# `county_names` field). None = statewide. "Hennepin" targets your county; if the
-# live data has no county detail, the app falls back to statewide automatically.
-WASTEWATER_COUNTY = "Hennepin"
+# Your local county. Used for two local layers:
+#   (a) CDC wastewater — keep only sites serving this county, and
+#   (b) CDC's sub-state ER-visit TREND, reported per county's Health Service Area.
+# CDC only publishes the ER-visit *percentage* statewide, so that number stays at
+# the Minnesota level; the local picture comes from wastewater + trend direction.
+LOCAL_COUNTY = "Hennepin"
 
 # --- LIVE vs SAMPLE data -----------------------------------------------------
 # By default we serve bundled SAMPLE data, so the app runs anywhere with no

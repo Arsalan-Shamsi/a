@@ -54,17 +54,26 @@ function signalHtml(s) {
   const tag = prov.is_sample
     ? '<span class="tag-sample">sample</span>'
     : '<span class="tag-live">live</span>';
+  const head = `<div class="signal-top">
+        <span class="signal-label" title="${s.description || ""}">${s.signal_label}</span>
+        <span class="signal-source"><a href="${prov.source_url}" target="_blank" rel="noopener">${prov.source_short} ↗</a></span>
+      </div>`;
+  const footer = `<div class="through">${prov.geography} · through ${fmtDate(s.current_date)} · ${tag}</div>`;
+
+  // Trend-only signal (e.g. CDC's local direction): show the arrow, not a number.
+  if (!s.points || s.points.length === 0) {
+    const dir = s.trend
+      ? `<span class="trend ${t.cls}">${t.arrow} ${t.label}</span>`
+      : `<span class="trend stable">${s.trend_label || "Not reported"}</span>`;
+    return `<div class="signal">${head}<div class="signal-main">${dir}</div>${footer}</div>`;
+  }
+
   const valueStr = s.current_value === null || s.current_value === undefined
     ? "—" : s.current_value;
   const pill = s.level_category
     ? `<span class="chip ${levelClass(s.level_category)}">${s.level_category}</span>`
     : "";
-  return `
-    <div class="signal">
-      <div class="signal-top">
-        <span class="signal-label" title="${s.description || ""}">${s.signal_label}</span>
-        <span class="signal-source"><a href="${prov.source_url}" target="_blank" rel="noopener">${prov.source_short} ↗</a></span>
-      </div>
+  return `<div class="signal">${head}
       <div class="signal-main">
         <span class="value">${valueStr}</span>
         <span class="unit">${s.unit}</span>
@@ -72,12 +81,11 @@ function signalHtml(s) {
         <span class="trend ${t.cls}">${t.arrow} ${t.label}</span>
       </div>
       ${sparkline(s.points, s.trend)}
-      <div class="through">${prov.geography} · through ${fmtDate(s.current_date)} · ${tag}</div>
-    </div>`;
+      ${footer}</div>`;
 }
 
 function cardHtml(block) {
-  // Use the % of ER visits series (our primary "spine") as the headline trend.
+  // Use the statewide % series (our numeric "spine") for the headline chip.
   const spine = block.series.find(s => s.signal === "ed_visits_pct");
   const t = spine ? trendView(spine.trend, spine.trend_label) : trendView(null);
   const chip = t.label

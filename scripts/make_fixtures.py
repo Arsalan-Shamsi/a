@@ -106,12 +106,35 @@ for i, sat in enumerate(saturdays):
     })
 ili_payload = {"result": 1, "epidata": ili_rows, "message": "success"}
 
+# --- CDC NSSP sub-state trends (rdmq-nq56): local DIRECTION for the county -----
+# Each county row carries its Health Service Area name + a trend word per virus.
+# We emit the last few weeks; the app uses the most recent. Story matches the
+# curves above: COVID rising, flu and RSV falling.
+ed_trend_rows = []
+for sat in saturdays[-4:]:
+    ed_trend_rows.append({
+        "week_end": sat.isoformat() + "T00:00:00.000",
+        "geography": "Minnesota",
+        "county": "Hennepin",
+        "ed_trends_covid": "Increasing",
+        "ed_trends_influenza": "Decreasing",
+        "ed_trends_rsv": "Decreasing",
+        "hsa": "Hennepin (Minneapolis), MN",
+        "hsa_counties": "Anoka, Carver, Hennepin, Scott",
+        "hsa_nci_id": "999",
+        "fips": "27053",
+        "trend_source": "HSA",
+        "buildnumber": date(2026, 6, 6).isoformat(),
+    })
+
 FIXTURES.mkdir(parents=True, exist_ok=True)
 (FIXTURES / "cdc_nssp.json").write_text(json.dumps(nssp_rows, indent=2))
 (FIXTURES / "cdc_wastewater.json").write_text(json.dumps(ww_rows, indent=2))
 (FIXTURES / "cdc_ili.json").write_text(json.dumps(ili_payload, indent=2))
+(FIXTURES / "cdc_ed_trends.json").write_text(json.dumps(ed_trend_rows, indent=2))
 
 print(f"Wrote fixtures for {WEEKS} weeks ending {saturdays[-1].isoformat()}:")
 print(f"  cdc_nssp.json        {len(nssp_rows)} rows")
 print(f"  cdc_wastewater.json  {len(ww_rows)} rows")
 print(f"  cdc_ili.json         {len(ili_rows)} weeks")
+print(f"  cdc_ed_trends.json   {len(ed_trend_rows)} rows (local HSA direction)")
